@@ -11,10 +11,9 @@ data_modified_raw
 \#*
 stepx_*.sh
 
-
+*.chd
 *.iso
 *.zip
-*.swp
 
 
 # Byte-compiled / optimized / DLL files

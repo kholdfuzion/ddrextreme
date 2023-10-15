@@ -1,0 +1,62 @@
+sha1: dda9f3a0c8e7156d8afb38bae70438e078775356
+options:
+  platform: psx
+  basename: aout
+  
+  base_path: .
+  target_path: aout.exe
+  asm_path: asm/aout
+  asset_path: assets/aout
+  src_path: src/aout
+  gp_value: 0x800ee754
+  compiler: GCC
+  symbol_addrs_path:    symbol_addrs.aout.txt
+  undefined_syms_path:  undefined_syms.aout.txt
+  undefined_funcs_auto_path: undefined_funcs_auto.aout.txt
+  undefined_syms_auto_path:  undefined_syms_auto.aout.txt
+  find_file_boundaries: True
+  header_encoding: ASCII
+  enable_ld_alignment_hack: yes
+  use_legacy_include_asm: no
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+  # symbol_addrs_path: symbol_addrs.txt
+  # undefined_syms_path: undefined_syms.txt
+  # 
+  # 
+  # build_path: build
+  # extensions_path: tools/splat_ext
+  # auto_all_sections: True
+segments:
+  - [0x800, header]
+  - name: main
+    type: code
+    start: 0x00000800
+    vram: 0x80010000
+    subalign: 4
+    subsegments:
+      - [0x00800, data]
+      - [0x08318, c]
+      - [0x18E90, c]
+      - [0x18F40, c]
+      - [0x18FE0, c]
+      - [0x19010, c]
+      - [0x19070, c]
+      - [0x19080, c]
+      - [0x19100, c]
+      - [0x2D0A0, c]
+      - [0x3AED0, c]
+      - [0x3AF20, c]
+      - [0x3AF50, c]
+      - [0x3B630, c]
+      - [0x3B700, c]
+      - [0x3B9C0, c]
+      - [0x3BCB0, c]
+      - [0x3BDC0, c]
+      - [0x3BDF0, c]
+      - [0x3BE40, c]
+      - [0x3BE50, c]
+      - [0xAD770, c]
+      - [0xC3300, data]
+
+  - [0xDF000] # end of file
